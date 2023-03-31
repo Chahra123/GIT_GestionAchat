@@ -7,12 +7,14 @@ import com.esprit.examen.services.IFactureService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Date;
 import java.util.List;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin("*")
+
 @RequiredArgsConstructor
 public class ProjectController {
     private final IFactureService factureService;
@@ -89,4 +91,5 @@ public class ProjectController {
     public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
         return categorieProduitService.updateCategorieProduit(categorieProduit);
     }
+
 }
