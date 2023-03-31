@@ -1,7 +1,18 @@
 package com.esprit.examen.controllers;
 
+
 import com.esprit.examen.entities.*;
 import com.esprit.examen.services.*;
+
+
+import com.esprit.examen.entities.CategorieProduit;
+import com.esprit.examen.entities.Facture;
+import com.esprit.examen.services.ICategorieProduitService;
+import com.esprit.examen.services.IFactureService;
+
+
+
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -201,6 +212,7 @@ public class ProjectController {
         return categorieProduitService.updateCategorieProduit(categorieProduit);
     }
 
+
     @GetMapping
     public List<Produit> getProduits() {
         return produitService.retrieveAllProduits();
@@ -247,5 +259,6 @@ public class ProjectController {
 
 		return produitService.getRevenuBrutProduit(idProduit, startDate, endDate);
 	}*/
+
 
 }
