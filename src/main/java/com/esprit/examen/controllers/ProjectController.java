@@ -27,6 +27,12 @@ public class ProjectController {
         return factureService.retrieveFacture(factureId);
     }
 
+    @PostMapping
+    public Facture addFacture(@RequestBody Facture f) {
+        Facture facture = factureService.addFacture(f);
+        return facture;
+    }
+
     @GetMapping
     public List<CategorieProduit> getCategorieProduit() {
         List<CategorieProduit> list = categorieProduitService.retrieveAllCategorieProduits();

@@ -22,13 +22,6 @@ public class FactureRestController {
 
     private final IFactureService factureService;
 
-
-    @PostMapping
-    public Facture addFacture(@RequestBody Facture f) {
-        Facture facture = factureService.addFacture(f);
-        return facture;
-    }
-
     /*
      * une facture peut etre annulé si elle a été saisie par erreur Pour ce
      * faire, il suffit de mettre le champs active à false
