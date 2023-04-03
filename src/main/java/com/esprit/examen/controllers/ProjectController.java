@@ -42,6 +42,11 @@ public class ProjectController {
         factureService.cancelFacture(factureId);
     }
 
+    @GetMapping("/byfournisseur/{fournisseur-id}")
+    public List<Facture> getFactureByFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
+        return factureService.getFacturesByFournisseur(fournisseurId);
+    }
+    
     @GetMapping
     public List<CategorieProduit> getCategorieProduit() {
         List<CategorieProduit> list = categorieProduitService.retrieveAllCategorieProduits();
