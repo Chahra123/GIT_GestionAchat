@@ -5,8 +5,10 @@ import com.esprit.examen.entities.Facture;
 import com.esprit.examen.services.ICategorieProduitService;
 import com.esprit.examen.services.IFactureService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -50,6 +52,15 @@ public class ProjectController {
     @PutMapping(value = "/assign-to-operateur/{idOperateur}/{idFacture}")
     public void assignOperateurToFacture(@PathVariable("idOperateur") Long idOperateur, @PathVariable("idFacture") Long idFacture) {
         factureService.assignOperateurToFacture(idOperateur, idFacture);
+    }
+
+    @GetMapping(value = "/pourcentage-recouvrement/{startDate}/{endDate}")
+    public float pourcentageRecouvrement(
+            @PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
+            @PathVariable(name = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
+
+        return factureService.pourcentageRecouvrement(startDate, endDate);
+
     }
     
     @GetMapping
