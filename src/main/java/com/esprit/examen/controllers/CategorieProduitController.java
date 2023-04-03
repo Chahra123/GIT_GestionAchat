@@ -25,11 +25,6 @@ public class CategorieProduitController {
 
 	private final ICategorieProduitService categorieProduitService;
 
-	@DeleteMapping("{categorieProduit-id}")
-	public void removeCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {
-		categorieProduitService.deleteCategorieProduit(categorieProduitId);
-	}
-
 	@PutMapping
 	public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
 		return categorieProduitService.updateCategorieProduit(categorieProduit);
