@@ -24,12 +24,6 @@ import io.swagger.annotations.Api;
 public class CategorieProduitController {
 
 	private final ICategorieProduitService categorieProduitService;
-	
-	@GetMapping
-	public List<CategorieProduit> getCategorieProduit() {
-		List<CategorieProduit> list = categorieProduitService.retrieveAllCategorieProduits();
-		return list;
-	}
 
 	@GetMapping("/{categorieProduit-id}")
 	public CategorieProduit retrieveCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {
