@@ -34,4 +34,9 @@ public class ProjectController {
     public void removeCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {
         categorieProduitService.deleteCategorieProduit(categorieProduitId);
     }
+
+    @PutMapping
+    public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
+        return categorieProduitService.updateCategorieProduit(categorieProduit);
+    }
 }
