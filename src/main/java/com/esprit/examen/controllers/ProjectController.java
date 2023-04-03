@@ -24,4 +24,9 @@ public class ProjectController {
         CategorieProduit categorieProduit = categorieProduitService.addCategorieProduit(cp);
         return categorieProduit;
     }
+
+    @GetMapping("/{categorieProduit-id}")
+    public CategorieProduit retrieveCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {
+        return categorieProduitService.retrieveCategorieProduit(categorieProduitId);
+    }
 }
