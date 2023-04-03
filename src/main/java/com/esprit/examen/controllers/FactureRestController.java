@@ -23,13 +23,6 @@ public class FactureRestController {
     private final IFactureService factureService;
 
 
-    @GetMapping("/{facture-id}")
-
-    public Facture retrieveFacture(@PathVariable("facture-id") Long factureId) {
-        return factureService.retrieveFacture(factureId);
-    }
-
-
     @PostMapping
     public Facture addFacture(@RequestBody Facture f) {
         Facture facture = factureService.addFacture(f);

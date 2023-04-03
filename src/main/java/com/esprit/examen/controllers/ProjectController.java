@@ -21,6 +21,12 @@ public class ProjectController {
         return factureService.retrieveAllFactures();
     }
 
+    @GetMapping("/{facture-id}")
+
+    public Facture retrieveFacture(@PathVariable("facture-id") Long factureId) {
+        return factureService.retrieveFacture(factureId);
+    }
+
     @GetMapping
     public List<CategorieProduit> getCategorieProduit() {
         List<CategorieProduit> list = categorieProduitService.retrieveAllCategorieProduits();
