@@ -22,11 +22,6 @@ public class FactureRestController {
 
     private final IFactureService factureService;
 
-    @PutMapping(value = "/assign-to-operateur/{idOperateur}/{idFacture}")
-    public void assignOperateurToFacture(@PathVariable("idOperateur") Long idOperateur, @PathVariable("idFacture") Long idFacture) {
-        factureService.assignOperateurToFacture(idOperateur, idFacture);
-    }
-
     @GetMapping(value = "/pourcentage-recouvrement/{startDate}/{endDate}")
     public float pourcentageRecouvrement(
             @PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,

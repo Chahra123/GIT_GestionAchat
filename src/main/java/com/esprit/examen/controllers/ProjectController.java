@@ -46,6 +46,11 @@ public class ProjectController {
     public List<Facture> getFactureByFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
         return factureService.getFacturesByFournisseur(fournisseurId);
     }
+
+    @PutMapping(value = "/assign-to-operateur/{idOperateur}/{idFacture}")
+    public void assignOperateurToFacture(@PathVariable("idOperateur") Long idOperateur, @PathVariable("idFacture") Long idFacture) {
+        factureService.assignOperateurToFacture(idOperateur, idFacture);
+    }
     
     @GetMapping
     public List<CategorieProduit> getCategorieProduit() {
