@@ -1,7 +1,9 @@
 package com.esprit.examen.controllers;
 
 import com.esprit.examen.entities.CategorieProduit;
+import com.esprit.examen.entities.Facture;
 import com.esprit.examen.services.ICategorieProduitService;
+import com.esprit.examen.services.IFactureService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +13,13 @@ import java.util.List;
 @CrossOrigin("*")
 @RequiredArgsConstructor
 public class ProjectController {
+    private final IFactureService factureService;
     private final ICategorieProduitService categorieProduitService;
+
+    @GetMapping
+    public List<Facture> getFactures() {
+        return factureService.retrieveAllFactures();
+    }
 
     @GetMapping
     public List<CategorieProduit> getCategorieProduit() {

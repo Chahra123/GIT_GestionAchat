@@ -22,11 +22,6 @@ public class FactureRestController {
 
     private final IFactureService factureService;
 
-    @GetMapping
-    public List<Facture> getFactures() {
-        return factureService.retrieveAllFactures();
-    }
-
 
     @GetMapping("/{facture-id}")
 
