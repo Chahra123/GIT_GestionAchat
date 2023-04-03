@@ -30,12 +30,6 @@ public class CategorieProduitController {
 		return categorieProduitService.retrieveCategorieProduit(categorieProduitId);
 	}
 
-	@PostMapping
-	public CategorieProduit addCategorieProduit(@RequestBody CategorieProduit cp) {
-		CategorieProduit categorieProduit = categorieProduitService.addCategorieProduit(cp);
-		return categorieProduit;
-	}
-
 	@DeleteMapping("{categorieProduit-id}")
 	public void removeCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {
 		categorieProduitService.deleteCategorieProduit(categorieProduitId);

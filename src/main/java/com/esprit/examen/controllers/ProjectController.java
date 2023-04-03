@@ -3,9 +3,7 @@ package com.esprit.examen.controllers;
 import com.esprit.examen.entities.CategorieProduit;
 import com.esprit.examen.services.ICategorieProduitService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,4 +19,9 @@ public class ProjectController {
         return list;
     }
 
+    @PostMapping
+    public CategorieProduit addCategorieProduit(@RequestBody CategorieProduit cp) {
+        CategorieProduit categorieProduit = categorieProduitService.addCategorieProduit(cp);
+        return categorieProduit;
+    }
 }
