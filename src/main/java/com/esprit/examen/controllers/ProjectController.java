@@ -33,6 +33,15 @@ public class ProjectController {
         return facture;
     }
 
+    /*
+     * une facture peut être annulée si elle a été saisie par erreur. Pour ce
+     * faire, il suffit de mettre le champs active à false
+     */
+    @PutMapping("/cancel/{facture-id}")
+    public void cancelFacture(@PathVariable("facture-id") Long factureId) {
+        factureService.cancelFacture(factureId);
+    }
+
     @GetMapping
     public List<CategorieProduit> getCategorieProduit() {
         List<CategorieProduit> list = categorieProduitService.retrieveAllCategorieProduits();
