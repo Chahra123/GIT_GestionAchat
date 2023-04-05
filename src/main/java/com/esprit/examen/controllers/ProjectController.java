@@ -164,4 +164,9 @@ public class ProjectController {
         return produitService.retrieveAllProduits();
     }
 
+    @GetMapping("/{produit-id}")
+    public Produit retrieveRayon(@PathVariable("produit-id") Long produitId) {
+        return produitService.retrieveProduit(produitId);
+    }
+
 }
