@@ -83,7 +83,7 @@ public class ProjectController {
     }
 
     @PutMapping(value = "/assignSecteurActiviteToFournisseur/{idSecteurActivite}/{idFournisseur}")
-    public void assignProduitToStock(@PathVariable("idSecteurActivite") Long idSecteurActivite, @PathVariable("idFournisseur") Long idFournisseur) {
+    public void assignSecteurActiviteToFournisseur(@PathVariable("idSecteurActivite") Long idSecteurActivite, @PathVariable("idFournisseur") Long idFournisseur) {
         fournisseurService.assignSecteurActiviteToFournisseur(idSecteurActivite, idFournisseur);
     }
 
@@ -182,6 +182,16 @@ public class ProjectController {
     @PutMapping
     public Produit modifyProduit(@RequestBody Produit p) {
         return produitService.updateProduit(p);
+    }
+
+    /*
+     * Si le responsable magasin souhaite modifier le stock du produit il peut
+     * le faire en l'affectant au stock en question
+     */
+    // http://localhost:8089/SpringMVC/produit/assignProduitToStock/1/5
+    @PutMapping(value = "/assignProduitToStock/{idProduit}/{idStock}")
+    public void assignProduitToStock(@PathVariable("idProduit") Long idProduit, @PathVariable("idStock") Long idStock) {
+        produitService.assignProduitToStock(idProduit, idStock);
     }
 
 }
