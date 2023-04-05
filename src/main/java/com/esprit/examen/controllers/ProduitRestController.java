@@ -18,11 +18,6 @@ public class ProduitRestController {
 
 	private final IProduitService produitService;
 
-	@GetMapping
-	public List<Produit> getProduits() {
-		return produitService.retrieveAllProduits();
-	}
-
 	@GetMapping("/{produit-id}")
 	public Produit retrieveRayon(@PathVariable("produit-id") Long produitId) {
 		return produitService.retrieveProduit(produitId);

@@ -1,9 +1,7 @@
 package com.esprit.examen.controllers;
 
-import com.esprit.examen.entities.CategorieProduit;
-import com.esprit.examen.entities.Facture;
-import com.esprit.examen.services.ICategorieProduitService;
-import com.esprit.examen.services.IFactureService;
+import com.esprit.examen.entities.*;
+import com.esprit.examen.services.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +20,11 @@ public class ProjectController {
     private final ICategorieProduitService categorieProduitService;
 
     private final IFournisseurService fournisseurService;
+
     private final IOperateurService operateurService;
+    private final IProduitService produitService;
+
+
     @GetMapping
     public List<Fournisseur> getFournisseurs() {
         return fournisseurService.retrieveAllFournisseurs();
@@ -155,6 +157,11 @@ public class ProjectController {
     @PutMapping
     public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
         return categorieProduitService.updateCategorieProduit(categorieProduit);
+    }
+
+    @GetMapping
+    public List<Produit> getProduits() {
+        return produitService.retrieveAllProduits();
     }
 
 }
