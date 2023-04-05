@@ -57,7 +57,10 @@ public class ProjectController {
         return operateurService.retrieveAllOperateurs();
     }
 
-
+    @GetMapping("/{operateur-id}")
+    public Operateur retrieveOperateur(@PathVariable("operateur-id") Long operateurId) {
+        return operateurService.retrieveOperateur(operateurId);
+    }
 
     @PutMapping(value = "/assignSecteurActiviteToFournisseur/{idSecteurActivite}/{idFournisseur}")
     public void assignProduitToStock(@PathVariable("idSecteurActivite") Long idSecteurActivite, @PathVariable("idFournisseur") Long idFournisseur) {

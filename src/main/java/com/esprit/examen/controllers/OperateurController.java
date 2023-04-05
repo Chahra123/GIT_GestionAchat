@@ -17,16 +17,9 @@ public class OperateurController {
 
 
 	private final IOperateurService operateurService;
-	
-	@GetMapping
-	public List<Operateur> getOperateurs() {
-		return operateurService.retrieveAllOperateurs();
-	}
 
-	@GetMapping("/{operateur-id}")
-	public Operateur retrieveOperateur(@PathVariable("operateur-id") Long operateurId) {
-		return operateurService.retrieveOperateur(operateurId);
-	}
+
+
 
 	@PostMapping
 	public Operateur addOperateur(@RequestBody Operateur op) {
