@@ -25,6 +25,19 @@ public class ProjectController {
     private final IProduitService produitService;
 
     private final IReglementService reglementService;
+
+    // http://localhost:8089/SpringMVC/reglement/getChiffreAffaireEntreDeuxDate/{startDate}/{endDate}
+    @GetMapping(value = "/getChiffreAffaireEntreDeuxDate/{startDate}/{endDate}")
+    public float getChiffreAffaireEntreDeuxDate(
+            @PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
+            @PathVariable(name = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
+        try {
+            return reglementService.getChiffreAffaireEntreDeuxDate(startDate, endDate);
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
     // http://localhost:8089/SpringMVC/reglement/retrieveReglementByFacture/8
     @GetMapping("/retrieveReglementByFacture/{facture-id}")
     @ResponseBody
