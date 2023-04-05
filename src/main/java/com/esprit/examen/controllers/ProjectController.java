@@ -179,5 +179,9 @@ public class ProjectController {
         produitService.deleteProduit(produitId);
     }
 
+    @PutMapping
+    public Produit modifyProduit(@RequestBody Produit p) {
+        return produitService.updateProduit(p);
+    }
 
 }

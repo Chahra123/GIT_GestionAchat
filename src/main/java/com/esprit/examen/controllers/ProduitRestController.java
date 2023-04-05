@@ -21,10 +21,7 @@ public class ProduitRestController {
 
 
 
-	@PutMapping
-	public Produit modifyProduit(@RequestBody Produit p) {
-		return produitService.updateProduit(p);
-	}
+
 
 	/*
 	 * Si le responsable magasin souhaite modifier le stock du produit il peut
