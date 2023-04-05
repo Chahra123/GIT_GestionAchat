@@ -29,10 +29,7 @@ public class FournisseurRestController {
 
 
 
-	@DeleteMapping("/{fournisseur-id}")
-	public void removeFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
-		fournisseurService.deleteFournisseur(fournisseurId);
-	}
+
 
 	@PutMapping
 	public Fournisseur modifyFournisseur(@RequestBody Fournisseur fournisseur) {

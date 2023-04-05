@@ -39,7 +39,10 @@ public class ProjectController {
         return fournisseur;
     }
 
-
+    @DeleteMapping("/{fournisseur-id}")
+    public void removeFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
+        fournisseurService.deleteFournisseur(fournisseurId);
+    }
 
 
     @GetMapping
