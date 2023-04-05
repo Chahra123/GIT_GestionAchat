@@ -25,6 +25,12 @@ public class ProjectController {
     private final IProduitService produitService;
 
     private final IReglementService reglementService;
+    // http://localhost:8089/SpringMVC/reglement/retrieveReglementByFacture/8
+    @GetMapping("/retrieveReglementByFacture/{facture-id}")
+    @ResponseBody
+    public List<Reglement> retrieveReglementByFacture(@PathVariable("facture-id") Long factureId) {
+        return reglementService.retrieveReglementByFacture(factureId);
+    }
 
     // http://localhost:8089/SpringMVC/reglement/retrieve-reglement/8
     @GetMapping("/retrieve-reglement/{reglement-id}")

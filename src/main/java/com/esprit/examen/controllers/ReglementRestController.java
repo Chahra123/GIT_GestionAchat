@@ -20,12 +20,6 @@ public class ReglementRestController {
 
     private final IReglementService reglementService;
 
-    // http://localhost:8089/SpringMVC/reglement/retrieveReglementByFacture/8
-    @GetMapping("/retrieveReglementByFacture/{facture-id}")
-    @ResponseBody
-    public List<Reglement> retrieveReglementByFacture(@PathVariable("facture-id") Long factureId) {
-        return reglementService.retrieveReglementByFacture(factureId);
-    }
 
     // http://localhost:8089/SpringMVC/reglement/getChiffreAffaireEntreDeuxDate/{startDate}/{endDate}
     @GetMapping(value = "/getChiffreAffaireEntreDeuxDate/{startDate}/{endDate}")
