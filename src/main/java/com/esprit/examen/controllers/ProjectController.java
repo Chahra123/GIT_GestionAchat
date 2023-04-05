@@ -27,6 +27,12 @@ public class ProjectController {
     public List<Fournisseur> getFournisseurs() {
         return fournisseurService.retrieveAllFournisseurs();
     }
+
+    @GetMapping("/{fournisseur-id}")
+    public Fournisseur retrieveFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
+        return fournisseurService.retrieveFournisseur(fournisseurId);
+    }
+
     @GetMapping
     public List<Facture> getFactures() {
         return factureService.retrieveAllFactures();
