@@ -20,10 +20,6 @@ public class ProduitRestController {
 
 
 
-	@DeleteMapping("/{produit-id}")
-	public void removeProduit(@PathVariable("produit-id") Long produitId) {
-		produitService.deleteProduit(produitId);
-	}
 
 	@PutMapping
 	public Produit modifyProduit(@RequestBody Produit p) {

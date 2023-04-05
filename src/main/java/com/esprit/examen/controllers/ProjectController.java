@@ -174,4 +174,10 @@ public class ProjectController {
         return produitService.addProduit(p);
     }
 
+    @DeleteMapping("/{produit-id}")
+    public void removeProduit(@PathVariable("produit-id") Long produitId) {
+        produitService.deleteProduit(produitId);
+    }
+
+
 }
