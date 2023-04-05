@@ -33,6 +33,15 @@ public class ProjectController {
         return fournisseurService.retrieveFournisseur(fournisseurId);
     }
 
+    @PostMapping
+    public Fournisseur addFournisseur(@RequestBody Fournisseur f) {
+        Fournisseur fournisseur = fournisseurService.addFournisseur(f);
+        return fournisseur;
+    }
+
+
+
+
     @GetMapping
     public List<Facture> getFactures() {
         return factureService.retrieveAllFactures();

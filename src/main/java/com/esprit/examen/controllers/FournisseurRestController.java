@@ -28,11 +28,6 @@ public class FournisseurRestController {
 
 
 
-	@PostMapping
-	public Fournisseur addFournisseur(@RequestBody Fournisseur f) {
-		Fournisseur fournisseur = fournisseurService.addFournisseur(f);
-		return fournisseur;
-	}
 
 	@DeleteMapping("/{fournisseur-id}")
 	public void removeFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
