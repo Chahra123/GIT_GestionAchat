@@ -23,11 +23,6 @@ public class OperateurController {
 
 
 
-	@DeleteMapping("/{operateur-id}")
-	public void removeOperateur(@PathVariable("operateur-id") Long operateurId) {
-		operateurService.deleteOperateur(operateurId);
-	}
-
 	@PutMapping
 	public Operateur modifyOperateur(@RequestBody Operateur operateur) {
 		return operateurService.updateOperateur(operateur);

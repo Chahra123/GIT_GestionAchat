@@ -68,6 +68,13 @@ public class ProjectController {
         return operateur;
     }
 
+
+    @DeleteMapping("/{operateur-id}")
+    public void removeOperateur(@PathVariable("operateur-id") Long operateurId) {
+        operateurService.deleteOperateur(operateurId);
+    }
+
+
     @PutMapping(value = "/assignSecteurActiviteToFournisseur/{idSecteurActivite}/{idFournisseur}")
     public void assignProduitToStock(@PathVariable("idSecteurActivite") Long idSecteurActivite, @PathVariable("idFournisseur") Long idFournisseur) {
         fournisseurService.assignSecteurActiviteToFournisseur(idSecteurActivite, idFournisseur);
