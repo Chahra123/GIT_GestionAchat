@@ -168,5 +168,10 @@ public class ProjectController {
     public Produit retrieveRayon(@PathVariable("produit-id") Long produitId) {
         return produitService.retrieveProduit(produitId);
     }
+    /* Ajouter en produit tout en lui affectant la catégorie produit et le stock associés */
+    @PostMapping
+    public Produit addProduit(@RequestBody Produit p) {
+        return produitService.addProduit(p);
+    }
 
 }

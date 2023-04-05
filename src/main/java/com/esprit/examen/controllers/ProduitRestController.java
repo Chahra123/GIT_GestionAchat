@@ -18,11 +18,7 @@ public class ProduitRestController {
 
 	private final IProduitService produitService;
 
-	/* Ajouter en produit tout en lui affectant la catégorie produit et le stock associés */
-	@PostMapping
-	public Produit addProduit(@RequestBody Produit p) {
-		return produitService.addProduit(p);
-	}
+
 
 	@DeleteMapping("/{produit-id}")
 	public void removeProduit(@PathVariable("produit-id") Long produitId) {
