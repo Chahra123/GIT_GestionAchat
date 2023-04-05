@@ -20,12 +20,6 @@ public class ReglementRestController {
 
     private final IReglementService reglementService;
 
-    @GetMapping("/retrieve-all-reglements")
-    @ResponseBody
-    public List<Reglement> getReglement() {
-        List<Reglement> list = reglementService.retrieveAllReglements();
-        return list;
-    }
 
     // http://localhost:8089/SpringMVC/reglement/retrieve-reglement/8
     @GetMapping("/retrieve-reglement/{reglement-id}")

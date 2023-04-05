@@ -26,6 +26,12 @@ public class ProjectController {
 
     private final IReglementService reglementService;
 
+    @GetMapping("/retrieve-all-reglements")
+    @ResponseBody
+    public List<Reglement> getReglement() {
+        List<Reglement> list = reglementService.retrieveAllReglements();
+        return list;
+    }
 
     // http://localhost:8089/SpringMVC/reglement/add-reglement
     @PostMapping("/add-reglement")
