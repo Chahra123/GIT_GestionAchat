@@ -75,6 +75,11 @@ public class ProjectController {
     }
 
 
+    @PutMapping
+    public Operateur modifyOperateur(@RequestBody Operateur operateur) {
+        return operateurService.updateOperateur(operateur);
+    }
+
     @PutMapping(value = "/assignSecteurActiviteToFournisseur/{idSecteurActivite}/{idFournisseur}")
     public void assignProduitToStock(@PathVariable("idSecteurActivite") Long idSecteurActivite, @PathVariable("idFournisseur") Long idFournisseur) {
         fournisseurService.assignSecteurActiviteToFournisseur(idSecteurActivite, idFournisseur);

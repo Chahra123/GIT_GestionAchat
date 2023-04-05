@@ -23,10 +23,6 @@ public class OperateurController {
 
 
 
-	@PutMapping
-	public Operateur modifyOperateur(@RequestBody Operateur operateur) {
-		return operateurService.updateOperateur(operateur);
-	}
 
 	
 }
