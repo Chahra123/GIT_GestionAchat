@@ -26,6 +26,13 @@ public class ProjectController {
 
     private final IReglementService reglementService;
 
+    // http://localhost:8089/SpringMVC/reglement/retrieve-reglement/8
+    @GetMapping("/retrieve-reglement/{reglement-id}")
+    @ResponseBody
+    public Reglement retrieveReglement(@PathVariable("reglement-id") Long reglementId) {
+        return reglementService.retrieveReglement(reglementId);
+    }
+
     @GetMapping("/retrieve-all-reglements")
     @ResponseBody
     public List<Reglement> getReglement() {
