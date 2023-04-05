@@ -44,6 +44,10 @@ public class ProjectController {
         fournisseurService.deleteFournisseur(fournisseurId);
     }
 
+    @PutMapping
+    public Fournisseur modifyFournisseur(@RequestBody Fournisseur fournisseur) {
+        return fournisseurService.updateFournisseur(fournisseur);
+    }
 
     @GetMapping
     public List<Facture> getFactures() {
