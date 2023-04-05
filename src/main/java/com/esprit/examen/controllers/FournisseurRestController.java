@@ -24,11 +24,7 @@ import io.swagger.annotations.Api;
 public class FournisseurRestController {
 
 	private final IFournisseurService fournisseurService;
-
-	@GetMapping
-	public List<Fournisseur> getFournisseurs() {
-		return fournisseurService.retrieveAllFournisseurs();
-	}
+	
 
 	@GetMapping("/{fournisseur-id}")
 	public Fournisseur retrieveFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {

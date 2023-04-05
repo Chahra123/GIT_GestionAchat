@@ -17,9 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 public class ProjectController {
+
     private final IFactureService factureService;
     private final ICategorieProduitService categorieProduitService;
 
+    private final IFournisseurService fournisseurService;
+
+    @GetMapping
+    public List<Fournisseur> getFournisseurs() {
+        return fournisseurService.retrieveAllFournisseurs();
+    }
     @GetMapping
     public List<Facture> getFactures() {
         return factureService.retrieveAllFactures();
