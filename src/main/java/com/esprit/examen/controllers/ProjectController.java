@@ -22,7 +22,7 @@ public class ProjectController {
     private final ICategorieProduitService categorieProduitService;
 
     private final IFournisseurService fournisseurService;
-
+    private final IOperateurService operateurService;
     @GetMapping
     public List<Fournisseur> getFournisseurs() {
         return fournisseurService.retrieveAllFournisseurs();
@@ -48,6 +48,16 @@ public class ProjectController {
     public Fournisseur modifyFournisseur(@RequestBody Fournisseur fournisseur) {
         return fournisseurService.updateFournisseur(fournisseur);
     }
+
+
+
+
+    @GetMapping
+    public List<Operateur> getOperateurs() {
+        return operateurService.retrieveAllOperateurs();
+    }
+
+
 
     @PutMapping(value = "/assignSecteurActiviteToFournisseur/{idSecteurActivite}/{idFournisseur}")
     public void assignProduitToStock(@PathVariable("idSecteurActivite") Long idSecteurActivite, @PathVariable("idFournisseur") Long idFournisseur) {
