@@ -312,5 +312,9 @@ public class ProjectController {
 //		stockService.retrieveStatusStock();
 //	}
 
+    @GetMapping("/{secteurActivite-id}")
+    public SecteurActivite retrieveSecteurActivite(@PathVariable("secteurActivite-id") Long secteurActiviteId) {
+        return secteurActiviteService.retrieveSecteurActivite(secteurActiviteId);
+    }
 }
 

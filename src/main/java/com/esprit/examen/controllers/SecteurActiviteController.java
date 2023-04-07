@@ -18,10 +18,7 @@ public class SecteurActiviteController {
 	private final ISecteurActiviteService secteurActiviteService;
 	
 
-	@GetMapping("/{secteurActivite-id}")
-	public SecteurActivite retrieveSecteurActivite(@PathVariable("secteurActivite-id") Long secteurActiviteId) {
-		return secteurActiviteService.retrieveSecteurActivite(secteurActiviteId);
-	}
+
 
 	@PostMapping
 	public SecteurActivite addSecteurActivite(@RequestBody SecteurActivite sa) {
