@@ -267,4 +267,8 @@ public class ProjectController {
     public List<Stock> getStocks() {
         return stockService.retrieveAllStocks();
     }
+    @GetMapping("/{stock-id}")
+    public Stock retrieveStock(@PathVariable("stock-id") Long stockId) {
+        return stockService.retrieveStock(stockId);
+    }
 }

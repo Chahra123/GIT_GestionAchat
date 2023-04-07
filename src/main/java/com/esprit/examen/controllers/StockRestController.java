@@ -20,12 +20,9 @@ public class StockRestController {
 
 	private final IStockService stockService;
 
-	
 
-	@GetMapping("/{stock-id}")
-	public Stock retrieveStock(@PathVariable("stock-id") Long stockId) {
-		return stockService.retrieveStock(stockId);
-	}
+
+
 
 	@PostMapping
 	public Stock addStock(@RequestBody Stock s) {
