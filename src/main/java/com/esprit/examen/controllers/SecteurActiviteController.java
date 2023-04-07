@@ -17,11 +17,7 @@ public class SecteurActiviteController {
 
 	private final ISecteurActiviteService secteurActiviteService;
 	
-	@GetMapping
-	public List<SecteurActivite> getSecteurActivite() {
-		return secteurActiviteService.retrieveAllSecteurActivite();
-	}
-
+	
 	@GetMapping("/{secteurActivite-id}")
 	public SecteurActivite retrieveSecteurActivite(@PathVariable("secteurActivite-id") Long secteurActiviteId) {
 		return secteurActiviteService.retrieveSecteurActivite(secteurActiviteId);

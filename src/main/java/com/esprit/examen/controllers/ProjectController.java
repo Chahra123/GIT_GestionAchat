@@ -40,6 +40,8 @@ public class ProjectController {
 
     private final IReglementService reglementService;
 
+    private final ISecteurActiviteService secteurActiviteService;
+
     // http://localhost:8089/SpringMVC/reglement/getChiffreAffaireEntreDeuxDate/{startDate}/{endDate}
     @GetMapping(value = "/getChiffreAffaireEntreDeuxDate/{startDate}/{endDate}")
     public float getChiffreAffaireEntreDeuxDate(
@@ -263,6 +265,11 @@ public class ProjectController {
 		return produitService.getRevenuBrutProduit(idProduit, startDate, endDate);
 	}*/
 
+
+    @GetMapping
+    public List<SecteurActivite> getSecteurActivite() {
+        return secteurActiviteService.retrieveAllSecteurActivite();
+    }
 
 
     @GetMapping("/retrieve-all-stocks")
