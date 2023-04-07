@@ -22,10 +22,7 @@ public class SecteurActiviteController {
 
 
 
-	@DeleteMapping("/{secteurActivite-id}")
-	public void removeSecteurActivite(@PathVariable("secteurActivite-id") Long secteurActiviteId) {
-		secteurActiviteService.deleteSecteurActivite(secteurActiviteId);
-	}
+
 
 	@PutMapping
 	public SecteurActivite modifySecteurActivite(@RequestBody SecteurActivite secteurActivite) {
