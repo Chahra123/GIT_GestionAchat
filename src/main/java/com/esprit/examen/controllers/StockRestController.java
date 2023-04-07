@@ -24,11 +24,7 @@ public class StockRestController {
 
 
 
-	@PostMapping
-	public Stock addStock(@RequestBody Stock s) {
-		Stock stock = stockService.addStock(s);
-		return stock;
-	}
+
 
 	@DeleteMapping("/{stock-id}")
 	public void removeStock(@PathVariable("stock-id") Long stockId) {

@@ -271,4 +271,12 @@ public class ProjectController {
     public Stock retrieveStock(@PathVariable("stock-id") Long stockId) {
         return stockService.retrieveStock(stockId);
     }
+
+    @PostMapping
+    public Stock addStock(@RequestBody Stock s) {
+        Stock stock = stockService.addStock(s);
+        return stock;
+    }
+
 }
+
