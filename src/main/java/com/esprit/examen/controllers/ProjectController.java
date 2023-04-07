@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ProjectController {
 
+    private final IStockService stockService;
     private final IFactureService factureService;
     private final ICategorieProduitService categorieProduitService;
 
@@ -261,4 +262,9 @@ public class ProjectController {
 	}*/
 
 
+
+    @GetMapping("/retrieve-all-stocks")
+    public List<Stock> getStocks() {
+        return stockService.retrieveAllStocks();
+    }
 }
