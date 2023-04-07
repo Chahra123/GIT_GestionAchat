@@ -277,6 +277,11 @@ public class ProjectController {
         Stock stock = stockService.addStock(s);
         return stock;
     }
+    @DeleteMapping("/{stock-id}")
+    public void removeStock(@PathVariable("stock-id") Long stockId) {
+        stockService.deleteStock(stockId);
+    }
 
+    
 }
 
