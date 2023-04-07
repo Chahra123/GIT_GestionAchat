@@ -20,11 +20,7 @@ public class SecteurActiviteController {
 
 
 
-	@PostMapping
-	public SecteurActivite addSecteurActivite(@RequestBody SecteurActivite sa) {
-		SecteurActivite secteurActivite = secteurActiviteService.addSecteurActivite(sa);
-		return secteurActivite;
-	}
+
 
 	@DeleteMapping("/{secteurActivite-id}")
 	public void removeSecteurActivite(@PathVariable("secteurActivite-id") Long secteurActiviteId) {

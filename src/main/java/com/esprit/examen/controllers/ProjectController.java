@@ -316,5 +316,11 @@ public class ProjectController {
     public SecteurActivite retrieveSecteurActivite(@PathVariable("secteurActivite-id") Long secteurActiviteId) {
         return secteurActiviteService.retrieveSecteurActivite(secteurActiviteId);
     }
+
+    @PostMapping
+    public SecteurActivite addSecteurActivite(@RequestBody SecteurActivite sa) {
+        SecteurActivite secteurActivite = secteurActiviteService.addSecteurActivite(sa);
+        return secteurActivite;
+    }
 }
 
