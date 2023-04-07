@@ -24,10 +24,7 @@ public class SecteurActiviteController {
 
 
 
-	@PutMapping
-	public SecteurActivite modifySecteurActivite(@RequestBody SecteurActivite secteurActivite) {
-		return secteurActiviteService.updateSecteurActivite(secteurActivite);
-	}
+
 
 	
 }

@@ -327,5 +327,10 @@ public class ProjectController {
     public void removeSecteurActivite(@PathVariable("secteurActivite-id") Long secteurActiviteId) {
         secteurActiviteService.deleteSecteurActivite(secteurActiviteId);
     }
+
+    @PutMapping
+    public SecteurActivite modifySecteurActivite(@RequestBody SecteurActivite secteurActivite) {
+        return secteurActiviteService.updateSecteurActivite(secteurActivite);
+    }
 }
 
