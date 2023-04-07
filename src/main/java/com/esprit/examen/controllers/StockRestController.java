@@ -28,10 +28,7 @@ public class StockRestController {
 
 
 
-	@PutMapping
-	public Stock modifyStock(@RequestBody Stock stock) {
-		return stockService.updateStock(stock);
-	}
+
 
 	/*
 	 * Spring Scheduler : Comparer QteMin tolérée (à ne pa dépasser) avec

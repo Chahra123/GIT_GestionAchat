@@ -282,6 +282,9 @@ public class ProjectController {
         stockService.deleteStock(stockId);
     }
 
-    
+    @PutMapping
+    public Stock modifyStock(@RequestBody Stock stock) {
+        return stockService.updateStock(stock);
+    }
 }
 
