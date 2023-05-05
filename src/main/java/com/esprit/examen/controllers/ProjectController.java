@@ -125,6 +125,8 @@ public class ProjectController {
     @PostMapping
     public Operateur addOperateur(@RequestBody Operateur op) {
         Operateur operateur = operateurService.addOperateur(op);
+        System.out.println("***************TEST CONFLITS *****************");
+        System.out.println("OPERATEUR:"+op);
         return operateur;
     }
 
