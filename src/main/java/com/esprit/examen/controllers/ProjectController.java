@@ -54,6 +54,16 @@ public class ProjectController {
         }
     }
 
+        public float test(
+            @PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
+            @PathVariable(name = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
+        try {
+            return reglementService.getChiffreAffaireEntreDeuxDate(startDate, endDate);
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
     // http://localhost:8089/SpringMVC/reglement/retrieveReglementByFacture/8
     @GetMapping("/retrieveReglementByFacture/{facture-id}")
     @ResponseBody
